@@ -1,1 +1,41 @@
-# Rock-paper-scissors
+<!DOCTYPE html>
+<script>
+   // Function that will randomly return rock, paper or scissors//
+   
+   const values = ["Rock", "Paper", "Scissors"];
+   function computerPlay() {    
+    return values[~~(Math.random() * values.length)];  
+    
+};
+    
+    
+       // function with two parameters: playerSelection and computerSelection that returns in a string the winner //
+   
+    function round(playerSelection = prompt("choose"), computerSelection = computerPlay()) { 
+        
+        let result = computerSelection;
+        
+       if (playerSelection === computerSelection)  {
+            return "The computer selected: "+ result + " It's a tie!";
+        }
+        if (playerSelection === "Rock" && computerSelection === "Scissors") {
+            return "The computer selected: "+ result + " You win! Rock beats Scissors";
+        }
+        if (playerSelection === "Rock" && computerSelection === "Paper") {
+            return "The computer selected: "+ result + " You lose! Paper beats Rock";
+        }
+        if (playerSelection === "Scissors" && computerSelection === "Paper") {
+            return "The computer selected: "+ result + " You win! Scissors beats Paper";
+        }
+        if (playerSelection === "Scissors" && computerSelection === "Rock") {
+            return "The computer selected: "+ result + " You lose! Rock beats Scissors";
+        }
+        if (playerSelection === "Paper" && computerSelection === "Rock") {
+            return "The computer selected: "+ result + " You win! Paper beats Rock";
+        }
+        if (playerSelection === "Paper" && computerSelection === "Scissors") {
+            return "The computer selected: "+ result + " You lose! Scissors beats Paper";
+        }
+    }
+    // create new function called game and use the previous function inside it to play 5 rounds and report a winner and loser at the end//s
+</script>
