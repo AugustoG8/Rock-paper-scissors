@@ -7,7 +7,8 @@
     return values[~~(Math.random() * values.length)];  
     
 };
-    
+let playerScore = 0;
+ let computerScore = 0;   
     
        // function with two parameters: playerSelection and computerSelection that returns in a string the winner //
    
@@ -19,23 +20,54 @@
             return "The computer selected: "+ result + ". It's a tie!";
         }
         if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
+            playerScore += 1;
             return "The computer selected: "+ result + ". You win! Rock beats Scissors";
+            
         }
         if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
+            computerScore += 1;
             return "The computer selected: "+ result + ". You lose! Paper beats Rock";
+            
         }
         if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
+            playerScore += 1;
             return "The computer selected: "+ result + ". You win! Scissors beats Paper";
+            
         }
         if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
+            computerScore += 1;
             return "The computer selected: "+ result + ". You lose! Rock beats Scissors";
+            
         }
         if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
+            playerScore += 1;
             return "The computer selected: "+ result + ". You win! Paper beats Rock";
+            
         }
         if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
+            computerScore += 1;
             return "The computer selected: "+ result + ". You lose! Scissors beats Paper";
+            
         }
     }
     // create new function called game and use the previous function inside it to play 5 rounds and report a winner and loser at the end//s
+    function game() {
+        console.log(round())        
+        console.log(round())        
+        console.log(round())
+        console.log(round())
+        console.log(round())
+    if (playerScore > computerScore) {
+        return "Your score is " + playerScore + ". The computer score is " + computerScore + ". You win!";
+    }else if (playerScore < computerScore) {
+        return "Your score is " + playerScore + ". The computer score is " + computerScore + ". You lose!";
+    }else {
+        return "Your score is " + playerScore + ". The computer score is " + computerScore + ". It's a tie!";
+    }
+    reset();
+    }
+    function reset() {
+        playerScore = 0;
+        computerScore = 0;
+    }
 </script>
